@@ -1,0 +1,962 @@
+@font-face {
+  font-family: "roboto";
+  src: url(../police/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url(../police/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "roboto-thin";
+  src: url(../police/Roboto/Roboto-Thin.ttf);
+}
+@font-face {
+  font-family: "roboto-light";
+  src: url(../police/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "Shrikland";
+  src: url(../police/Shrikhand/Shrikhand-Regular.ttf);
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .img_page_entete {
+    max-width: 100%;
+    max-height: 30vw;
+  }
+  .img_page_entete img {
+    height: 93vw;
+    bottom: 337px;
+  }
+
+  .big_container1 {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .big_container2 {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    -webkit-animation: fadein 3s;
+    -o-animation: fadein 3s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .big_container3 {
+    animation: fadein 4s;
+    -moz-animation: fadein 4s;
+    -webkit-animation: fadein 4s;
+    -o-animation: fadein 4s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  #Fonctionnement {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cartes {
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+
+  .card--img {
+    max-height: 67vw;
+  }
+  .card--img--nvx > p {
+    font-family: "roboto-bold";
+    color: #037458;
+  }
+  .card--img > img {
+    width: 400px;
+    max-height: 219px;
+  }
+
+  .pages_entete {
+    gap: 35% !important;
+  }
+  .pages_entete > img {
+    width: 25% !important;
+  }
+  .pages_entete > .fa-arrow-left {
+    font-size: 30px;
+  }
+
+  .img_page_entete {
+    width: 100%;
+  }
+  .img_page_entete img {
+    height: 22vw;
+  }
+
+  .menu {
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .menu--titre {
+    border-bottom: solid 3px #99e2d0;
+    display: block;
+    position: relative;
+    right: -9px;
+    width: 15%;
+  }
+  .menu--titre > h2 {
+    font-family: "roboto-thin";
+    font-size: 20px;
+  }
+
+  .btn--comm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .container {
+    font-size: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 1px 1px 8px #aaaaaa;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    max-height: 65px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  footer {
+    background-color: #353535;
+    display: flex;
+    color: #e2e2e2;
+    padding: 26px 0px 19px 15px;
+    flex-direction: column;
+    gap: 25px;
+  }
+  footer > img {
+    fill: white !important;
+    width: 25% !important;
+  }
+}
+
+* {
+  font-family: "roboto", sans-serif;
+  box-sizing: border-box;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  contain: content;
+  scroll-behavior: smooth;
+}
+body h2 {
+  font-weight: 600;
+}
+body p {
+  font-family: "roboto-light";
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.logo {
+  width: 100%;
+  background-color: white;
+  box-shadow: 10px 17px 69px #c9c9c9;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 0px 20px 0px;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1000;
+}
+.logo > img {
+  width: 40%;
+}
+
+.input {
+  background-color: #999;
+}
+
+#formulaire_local {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #f3f3f3;
+}
+
+.fa-location-dot {
+  margin-left: 64px;
+}
+
+#chp_recherche {
+  border-style: none;
+  font-family: "roboto-bold";
+  color: black;
+  background-color: transparent;
+  padding: 15px 0px 15px 0px;
+}
+#chp_recherche::placeholder {
+  color: black;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  padding: 40px 20px 40px 20px;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+}
+#intro > h1 {
+  font-weight: 800;
+  font-size: 25px;
+}
+#intro > h2 {
+  font-weight: 200;
+  font-size: 17px;
+}
+
+.btn--explore > a {
+  background-image: linear-gradient(174deg, #ff79da 0%, #9356dc 90%);
+  border: 0 solid transparent;
+  border-radius: 30px;
+  box-shadow: 0px 0px 12px #00000033;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+  transition: all 0.2s ease-in-out;
+  scroll-behavior: smooth;
+}
+.btn--explore:hover {
+  filter: brightness(1.1);
+  box-shadow: rgba(50, 50, 93, 0.08) 0px 30px 60px -12px, rgba(0, 0, 0, 0.19) 0px 18px 36px -18px;
+}
+
+#Fonctionnement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  margin: 50px 0px 50px 23px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#Fonctionnement > .fonktion {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: auto;
+  align-items: center;
+}
+#Fonctionnement > .fonktion a {
+  text-decoration: none;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement {
+  display: flex;
+  align-items: center;
+  border: 2cm gray;
+  background-color: #e2e2e25c;
+  justify-content: flex-start;
+  padding: 15px;
+  border: 4px solid transparent;
+  box-shadow: 1px 1px 8px #e2e2e2;
+  border-radius: 8px;
+  margin-left: 10px;
+  max-width: 350px;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement--infos {
+  display: flex;
+  gap: 15px;
+  /* width: 266px; */
+}
+#Fonctionnement > .fonktion .btn__fonctionnement--infos > .fa-solid {
+  color: gray;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement--infos > p {
+  color: black;
+  color: black;
+  font-family: "roboto-Light";
+  font-weight: 600;
+  width: 240px;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement--infos:hover > .fa-solid {
+  color: #9356dc;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement span {
+  background-color: #9356dc;
+  position: relative;
+  right: 31px;
+  color: white;
+  border-radius: 25px;
+  padding: 4px 7px 4px 8px;
+  width: 25px;
+  height: 25px;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement:hover {
+  background-color: #9356dc4d;
+}
+#Fonctionnement > .fonktion .btn__fonctionnement:hover > .fa-solid {
+  color: #9356dc;
+}
+
+#Restaurants {
+  display: flex;
+  flex-direction: column;
+  background-color: #e2e2e2;
+  gap: 20px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+}
+#Restaurants > .Resto {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: space-between;
+}
+#Restaurants .cartes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#Restaurants .cartes a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 8px #e2e2e2;
+  max-width: 450px;
+  text-decoration: none;
+  color: black;
+  max-height: 300px;
+  min-width: 300px;
+  max-width: 450px;
+  text-decoration: none;
+  color: black;
+  max-height: 300px;
+}
+#Restaurants .card {
+  display: flex;
+  flex-direction: column;
+}
+#Restaurants .card--img {
+  max-width: 100%;
+  max-height: 55vw;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: contain;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+#Restaurants .card--img--nvx {
+  position: absolute;
+  padding: 5px;
+  display: flex;
+  color: #17322b91;
+  background-color: #99e2d0;
+  width: 21%;
+  z-index: 3;
+  margin-right: 20px;
+  margin-top: 16px;
+  border-radius: 5px;
+  min-width: 80px;
+  align-items: center;
+  top: 1px;
+  justify-content: center;
+}
+#Restaurants .card--img--nvx > p {
+  font-family: "roboto-bold";
+  color: #037458;
+}
+#Restaurants .card--img > img {
+  width: 100%;
+  max-height: 186px;
+  height: 45vw;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+  position: relative;
+}
+#Restaurants .card--infos {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+#Restaurants .card--infos > .fa-heart {
+  color: black;
+  cursor: pointer;
+  font-size: 25px;
+  transition: all 1.2s;
+  display: flex;
+  max-height: 25px;
+  animation: 1.2s forwards;
+  transform-origin: 50% 100%;
+}
+#Restaurants .card--infos > .fa-heart:hover {
+  color: #FF79DA;
+  font-weight: 600;
+  transform: scale(1.2);
+  -webkit-background-clip: text;
+}
+@-moz-keyframes fadein {
+  /* sur Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* sur Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#Restaurants .card--infos > .fa-solid {
+  display: block !important;
+}
+@keyframes rempliss {
+  from {
+    fill: black;
+  }
+  to {
+    fill: #ff79da;
+  }
+}
+@-moz-keyframes rempliss {
+  /* sur Firefox */
+  from {
+    fill: black;
+  }
+  to {
+    fill: #ff79da;
+  }
+}
+@-webkit-keyframes rempliss {
+  /* sur Safari et Chrome */
+  from {
+    fill: black;
+  }
+  to {
+    fill: #ff79da;
+  }
+}
+@-o-keyframes rempliss {
+  /* sur Opera */
+  from {
+    fill: black;
+  }
+  to {
+    fill: #ff79da;
+  }
+}
+
+/*Footer*/
+footer {
+  background-color: #353535;
+  display: flex;
+  color: #e2e2e2;
+  padding: 26px 0px 19px 15px;
+  flex-direction: column;
+  gap: 25px;
+}
+footer > img {
+  fill: white !important;
+  width: 50%;
+}
+footer > nav {
+  display: flex;
+  gap: 9px;
+  flex-direction: column;
+}
+footer > nav span {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+footer > nav span > a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+}
+footer > nav span > a > .fa-solid {
+  width: 25px;
+}
+
+/*Pages*/
+.pages_entete {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 20%;
+  padding-left: 15px;
+  margin: 18px;
+  align-items: center;
+}
+.pages_entete > img {
+  width: 50%;
+}
+.pages_entete > .fa-arrow-left {
+  font-size: 30px;
+}
+
+.img_page_entete {
+  max-width: 100%;
+  /*max-height: 77vw;*/
+  object-fit: contain;
+  overflow: hidden;
+  z-index: 3;
+}
+.img_page_entete img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+#corps_menu {
+  display: flex;
+  background-color: #e2e2e2;
+  margin-top: -40px;
+  border-radius: 45px 45px 0px 0px;
+  z-index: 2;
+  flex-direction: column;
+  padding: 2%;
+}
+#corps_menu > .menu_titre {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px;
+  gap: 15px;
+}
+#corps_menu > .menu_titre > h1 {
+  font-family: "Shrikland";
+  font-size: 25px;
+}
+#corps_menu > .menu_titre > .fa-heart {
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+  transition: all 1.2s;
+  display: flex;
+  max-height: 25px;
+  animation: fillin 1.2s forwards;
+  transform-origin: 50% 100%;
+}
+#corps_menu > .menu_titre > .fa-heart:hover {
+  color: #FF79DA;
+  font-weight: 600;
+  transform: scale(1.2);
+  -webkit-background-clip: text;
+}
+#corps_menu > .menu_titre > .fa-heart .fa-heart:hover {
+  background: linear-gradient(#9356DC, #FF79DA);
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#corps_menu .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+#corps_menu .menu--titre {
+  border-bottom: solid 3px #99e2d0;
+  display: block;
+  position: relative;
+  right: -9px;
+  width: 15%;
+}
+#corps_menu .menu--titre > h2 {
+  font-family: "roboto-thin";
+  font-size: 20px;
+}
+#corps_menu .btn--comm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#corps_menu .btn--comm > a {
+  background-image: linear-gradient(174deg, #ff79da 0%, #9356dc 90%);
+  border: 0 solid transparent;
+  border-radius: 30px;
+  box-shadow: 0px 0px 12px #00000033;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  transition: all 0.2s ease-in-out;
+  scroll-behavior: smooth;
+}
+#corps_menu .btn--comm:hover {
+  filter: brightness(1.1);
+}
+#corps_menu .container {
+  font-size: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 1px 1px 8px #aaaaaa;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  max-height: 65px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+#corps_menu .big_container1 {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  width: 350px;
+}
+#corps_menu .big_container2 {
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari et Chrome */
+  -o-animation: fadein 3s;
+  /* Opera */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  width: 350px;
+}
+#corps_menu .big_container3 {
+  animation: fadein 4s;
+  -moz-animation: fadein 4s;
+  /* Firefox */
+  -webkit-animation: fadein 4s;
+  /* Safari et Chrome */
+  -o-animation: fadein 4s;
+  /* Opera */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  width: 350px;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* sur Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* sur Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#accueil {
+  height: 100%;
+  width: 100%;
+  background-color: #ffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 4;
+  animation: AnimationName 1.5s ease infinite, fondu_out 0.2s 3s forwards;
+}
+#accueil p {
+  font-size: 25px;
+  font-family: "Shrikland";
+  color: white;
+  position: fixed;
+  top: 31%;
+  visibility: hidden;
+}
+
+.loader, .loader2 {
+  position: fixed;
+  top: 25%;
+  margin: auto;
+  width: 151px;
+  height: 100px;
+}
+.loader .circle, .loader2 .circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+  transform-origin: bottom center;
+  position: relative;
+}
+@keyframes loading {
+  0% {
+    transform: translateY(0px);
+    background-color: #9356dc;
+  }
+  50% {
+    transform: translateY(50px);
+    background-color: #99e2d0;
+  }
+  100% {
+    transform: translateY(0px);
+    background-color: #ff79da;
+  }
+}
+.loader .circle-1, .loader2 .circle-1 {
+  animation-delay: 0.1s;
+}
+.loader .circle-2, .loader2 .circle-2 {
+  animation-delay: 0.2s;
+}
+.loader .circle-3, .loader2 .circle-3 {
+  animation-delay: 0.3s;
+}
+.loader .circle-4, .loader2 .circle-4 {
+  animation-delay: 0.4s;
+}
+.loader .circle-5, .loader2 .circle-5 {
+  animation-delay: 0.5s;
+}
+.loader .circle-6, .loader2 .circle-6 {
+  animation-delay: 0.6s;
+}
+.loader .circle-7, .loader2 .circle-7 {
+  animation-delay: 0.7s;
+}
+.loader .circle-8, .loader2 .circle-8 {
+  animation-delay: 0.8s;
+}
+@keyframes fondu_out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-color: #9356dc;
+  }
+  50% {
+    background-color: #ff79da;
+  }
+  100% {
+    background-color: #9356dc;
+  }
+}
+
+.loader2 {
+  position: fixed;
+  top: 35%;
+}
+
+.container {
+  background: white;
+  height: 7rem;
+  border-radius: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: slideup 1s forwards;
+  font-size: 10px;
+  object-fit: cover;
+  background-color: white;
+  box-shadow: 1px 1px 8px #aaaaaa;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  max-height: 65px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.container .btn_cmd {
+  padding: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.container .btn_cmd .btn_cmd--txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn_cmd--txt > h3 {
+  font-size: 17px;
+  font-family: "roboto-bold";
+}
+.btn_cmd--txt > p {
+  font-size: 15px;
+}
+
+.btn_cmd > p {
+  /* font-weight: 800; */
+  font-size: 15px;
+  font-family: "roboto-bold";
+}
+
+.container .btn_cmd .btn_cmd--txt .menuTitle {
+  /* font-size: 1.6rem; */
+  /* font-weight: 400; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container .btn_cmd .btn_cmd--txt .menuDetails {
+  font-weight: 200;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container .btn_cmd .menuPrice {
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+}
+
+.container .checkup .fa-circle-check {
+  /* font-size: 3rem; */
+  color: white;
+  transform: rotate(360deg);
+  transition: 0.4s ease-in-out;
+}
+
+.container:hover .checkup {
+  opacity: 100%;
+  width: 20%;
+  height: 350px;
+}
+
+.container:hover .fa-circle-check {
+  transform: rotate(0deg);
+  animation-delay: 0.5s;
+}
+
+.checkup {
+  /* width: 100%; */
+  display: flex;
+  /* transform: scaleX(1); */
+  color: white;
+  background-color: #99e2d0;
+  opacity: 70%;
+  width: 0%;
+  height: 62px;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* animation: scale-x 200ms 0ms linear both; */
+  /* visibility: visible; */
+  object-fit: cover;
+  transition: 850ms;
+}
+
+.checkup > .fa-circle-check {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
