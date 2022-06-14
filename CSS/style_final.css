@@ -897,20 +897,15 @@ footer > nav span > a > .fa-solid {
   font-family: "roboto-bold";
 }
 
-.container .btn_cmd .btn_cmd--txt .menuTitle {
-  /* font-size: 1.6rem; */
-  /* font-weight: 400; */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
-.container .btn_cmd .btn_cmd--txt .menuDetails {
+.container .btn_cmd .btn_cmd--txt  {
   font-weight: 200;
   overflow: hidden;
   text-overflow: ellipsis;
+  gap: 15px;
 }
 
-.container .btn_cmd .menuPrice {
+.container .btn_cmd  {
   font-weight: 600;
   display: flex;
   align-items: flex-end;
